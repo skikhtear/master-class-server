@@ -9,3 +9,11 @@ app.use(cors())
 app.get('/', (req, res) => {
     res.send('Master class api running')
 });
+app.get('/courses', (req, res) => {
+    res.send(courses)
+})
+app.get('/courses/:id', (req, res) => {
+    const id = req.params.id
+    const selectedCourses = courses.find(c => c.id === id)
+    res.send(selectedCourses)
+});
