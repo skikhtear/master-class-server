@@ -17,3 +17,6 @@ app.get('/courses/:id', (req, res) => {
     const selectedCourses = courses.find(c => c.id === id)
     res.send(selectedCourses)
 });
+app.listen(port, () => {
+    console.log('master class Server running on port:', port);
+});
